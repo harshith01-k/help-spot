@@ -1,0 +1,33 @@
+@keyframes top-page
+{
+    0%
+    {
+        top: -100%;
+    }
+    100%
+    {
+        top: 0;
+    }
+}
+@keyframes banner
+{
+    0%
+    {
+        right: -100%;
+    }
+    100%
+    {
+        right: 0;
+    }
+}
+@keyframes button
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}

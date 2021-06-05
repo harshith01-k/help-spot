@@ -1,0 +1,478 @@
+*
+{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav
+{
+    position: fixed;
+    animation: top-page;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+   
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+    padding: 0 5%;
+    background: #0575E6; 
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6);  
+    background: linear-gradient(to right, #021B79, #0575E6); 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+nav .logo
+{
+    float: left;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size:42px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}
+nav .links
+{
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav .links li
+{
+    list-style: none;
+}
+nav .links li a
+{
+    display: block;
+    padding: 10px 15px;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    font-weight: 550;
+    cursor: pointer;
+}
+nav .links li a:hover
+{
+    background-color: #fff;
+    color: #021b79;
+}
+#nav-toggle
+{
+    display: none;
+    top: -100px;
+}
+nav .icon-burger
+{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+nav .icon-burger .line
+{
+    width: 30px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+@media (max-width:1000px)
+{
+    nav .links
+    {
+        z-index: 1000;
+        top: 100Px;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        position: fixed;
+        justify-content: space-evenly;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        bottom:100%;
+        background: #0575E6; 
+        background: -webkit-linear-gradient(to right, #021B79, #0575E6);  
+        background: linear-gradient(to right, #021B79, #0575E6);
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    nav .logo
+    {
+        float: none;
+        font-size: 22px;
+        align-items: center;
+        justify-content: center;
+    }
+    nav .icon-burger
+    {
+        display: block;
+    }
+    nav .links li a
+    {
+        display: block;
+        font-size: 20px;
+    }
+    nav .links li a:checked ~ nav .links
+    {
+        opacity: 0;
+    }
+    nav :checked ~ .links
+    {
+        bottom: 0;
+    }
+    nav .icon-burger .line
+    {
+        transition: all 0.3s ease-in-out;
+    }
+    nav :checked ~.icon-burger .line:nth-child(1)
+    {
+        transform: translateY(10px) rotate(225deg);
+    }
+    nav :checked ~.icon-burger .line:nth-child(3)
+    {
+        transform: translateY(-10px) rotate(-225deg);
+    }
+    nav :checked ~.icon-burger .line:nth-child(2)
+    {
+        opacity: 0;
+    }
+}
+#pre-banner
+{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/pre-banner.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#pre-banner h1
+{
+    margin-left: 55px;
+    background-color: #008dc9d9;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 4.6vw;
+    padding:20px;
+}
+@media (max-width:520px)
+{
+    #pre-banner
+    {
+        padding-top: 30px;
+        align-items: flex-start;
+    }
+}
+#effect
+{
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+#effect .effect-wrap
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2.5em;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+@media (max-width:1000px)
+{
+    #effect .effect-wrap
+    {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 2.5em;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    #effect .effect-wrap #effect2 h1
+    {
+        text-align: center;
+    }
+
+
+}
+#effect .effect-wrap #effect1 img
+{
+    width: 100%;
+    padding-top: 90px;
+    display: block;
+}
+#effect .effect-wrap #effect1 img:hover
+{
+    transform: scale(1.02);
+}
+#effect .effect-wrap #effect2
+{
+    padding-top: 90px;
+}
+#effect .effect-wrap #effect2 h1
+{
+    font-size: 45px;
+    color: #333;
+    text-transform: capitalize;
+    letter-spacing: 1.3px;
+    font-weight: 400;
+    padding-bottom: 12px;
+}
+@media (max-width:560px)
+{
+    #effect .effect-wrap #effect2 h1
+    {
+        font-size:35px ;
+        text-align: center;
+    }
+}
+
+#effect .effect-wrap #effect2 p
+{
+    font-size: 18px;
+    color: #555;
+    text-align: justify;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#our-org
+{
+    padding-top: 90px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+#our-org h1
+{
+    text-align: center;
+    color: #333;
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+@media (max-width:560px)
+{
+    #our-org h1
+    {
+        font-size:30px ;
+        text-align: center;
+    }
+}
+@media (max-width:450px)
+{
+    #our-org h1
+    {
+        font-size:25px ;
+        text-align: center;
+    }
+}
+
+#our-org p
+{
+    color: #555;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+}
+#images
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3em;
+}
+@media (max-width:1000px)
+{
+    #images
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width:620px)
+{
+    #images
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+#images img
+{
+    width: 100%;
+    display: block;
+}
+
+#images img:hover
+{
+    transform: scale(1.02);
+}
+#safety-precautions
+{
+    padding-top: 90px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+#safety-precautions #s-wrap
+{
+    padding-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 3em;
+}
+@media (max-width:620px)
+{
+    #safety-precautions #s-wrap
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+#safety-precautions h1
+{
+    text-align: center;
+    color: #333;
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+#safety-precautions p
+{
+    color: #555;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+}
+#safety-precautions #s-wrap #s1 img
+{
+    width: 100%;
+    display: block;
+}
+#safety-precautions #s-wrap #s1 img:hover
+{
+    transform: scale(1.02);
+}
+#safety-precautions #s-wrap #s1 p
+{
+    color: #555;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+    padding-top: 25px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer
+{
+    margin-top: 30px;
+    background-color: black;
+    padding-bottom: 60px;
+    min-height: 100vh;
+}
+#footer-align
+{
+    padding-right: 70px;
+    padding-left:70px;
+}
+#footer-align,#subfooter-align
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+#footer-align p,#subfooter-align p
+{
+    color: #808080;
+    font-size: 20px;
+}
+#footer-align ul li,#subfooter-align ul li
+{
+    list-style: none;
+}
+#footer-align ul li a,#subfooter-align ul li a
+{
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    display: inline-block;
+    padding-top: 10px;
+} 
+#footer-align #f4 img
+{
+    width:200px;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+@media (max-width:990px)
+{
+    #footer-align,#subfooter-align
+    {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap:2.5em;
+    }
+}
+@media (max-width:610px)
+{
+    #footer-align,#subfooter-align
+    {
+        display: grid;
+        grid-template-columns:1fr;
+        grid-gap:2.5em;
+    }
+}
